@@ -1,0 +1,24 @@
+WorkLoggerBundle\Entity\Record:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+      groups: [RECORD_LIST, RECORD_DETAILS]
+    time:
+      expose: true
+      groups: [RECORD_LIST, RECORD_DETAILS]
+    date:
+      expose: true
+      groups: [RECORD_LIST, RECORD_DETAILS]
+      type: DateTime<'Y-m-d'>
+    description:
+      expose: true
+      groups: [RECORD_LIST, RECORD_DETAILS]
+    project:
+      expose: true
+      groups: [RECORD_DETAILS]
+      type: WorkLoggerBundle\Entity\Project
+    user:
+      expose: true
+      groups: [RECORD_DETAILS]
+      type: WorkLoggerBundle\Entity\User

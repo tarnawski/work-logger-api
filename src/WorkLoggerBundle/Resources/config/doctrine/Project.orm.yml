@@ -1,0 +1,30 @@
+WorkLoggerBundle\Entity\Project:
+    type: entity
+    table: project
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            column: name
+            type: string
+            nullable: false
+            length: 64
+        description:
+            column: description
+            type: string
+            nullable: false
+            length: 255
+    oneToMany:
+         records:
+             targetEntity: Record
+             mappedBy: project
+             cascade: ["all"]
+
+    lifecycleCallbacks: {  }

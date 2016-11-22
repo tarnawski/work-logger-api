@@ -7,3 +7,9 @@ WorkLoggerBundle\Entity\User:
     lastName:
       expose: true
       groups: [USER_DETAILS, USER_PROFILE, USER_BASIC]
+    phone:
+      expose: true
+      groups: [USER_DETAILS, USER_PROFILE, USER_BASIC]
+    department:
+      expose: true
+      groups: [USER_DETAILS, USER_PROFILE, USER_BASIC]

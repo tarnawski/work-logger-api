@@ -1,0 +1,37 @@
+WorkLoggerBundle\Entity\Record:
+  record1:
+    time: <randomFloat(1,1,10)>
+    date: <dateTimeBetween('-30 days', 'now')>
+    description: <sentence()>
+    project: '@project1'
+    user: '@user1'
+  record2:
+    time: <randomFloat(1,1,10)>
+    date: <dateTimeBetween('-30 days', 'now')>
+    description: <sentence()>
+    project: '@project1'
+    user: '@user1'
+  record3:
+    time: <randomFloat(1,1,10)>
+    date: <dateTimeBetween('-30 days', 'now')>
+    description: <sentence()>
+    project: '@project2'
+    user: '@user1'
+  record4:
+    time: <randomFloat(1,1,10)>
+    date: <dateTimeBetween('-30 days', 'now')>
+    description: <sentence()>
+    project: '@project2'
+    user: '@user2'
+  record5:
+    time: <randomFloat(1,1,10)>
+    date: <dateTimeBetween('-30 days', 'now')>
+    description: <sentence()>
+    project: '@project3'
+    user: '@user2'
+  record6:
+    time: <randomFloat(1,1,10)>
+    date: <dateTimeBetween('-30 days', 'now')>
+    description: <sentence()>
+    project: '@project3'
+    user: '@user2'

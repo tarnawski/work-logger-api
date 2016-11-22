@@ -19,3 +19,35 @@ register:
   path:     /register
   defaults: { _controller: ApiBundle:User:register, _format: json }
   methods: [POST]
+
+########## PROJECT ##########
+project_all:
+  path:     /projects
+  defaults: { _controller: ApiBundle:Project:index, _format: json }
+  methods: [GET]
+
+project_single:
+  path: /projects/{id}
+  defaults:  { _controller: ApiBundle:Project:show, _format: json }
+  methods:  [GET]
+  requirements:
+      id:  \d+
+
+project_create:
+  path:     /projects
+  defaults: { _controller: ApiBundle:Project:create, _format: json }
+  methods: [POST]
+
+project_update:
+  path: /projects/{id}
+  defaults:  { _controller: ApiBundle:Project:update, _format: json }
+  methods:  [PUT]
+  requirements:
+      id:  \d+
+
+project_delete:
+  path: /projects/{id}
+  defaults:  { _controller: ApiBundle:Project:delete, _format: json }
+  methods:  [DELETE]
+  requirements:
+      id:  \d+

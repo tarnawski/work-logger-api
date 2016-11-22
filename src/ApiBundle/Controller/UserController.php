@@ -109,6 +109,7 @@ class UserController extends BaseController
         $user->setFirstName($userData->firstName);
         $user->setLastName($userData->lastName);
         $user->setEmail($userData->email);
+        $user->setPhone($userData->phone);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);

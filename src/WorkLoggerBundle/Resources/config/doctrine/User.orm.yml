@@ -17,5 +17,19 @@ WorkLoggerBundle\Entity\User:
           type: string
           nullable: true
           length: 64
-
+      phone:
+          column: phone
+          type: string
+          nullable: true
+          length: 64
+      department:
+          column: department
+          type: string
+          nullable: true
+          length: 64
+  oneToMany:
+      records:
+          targetEntity: Record
+          mappedBy: project
+          cascade: ["all"]
   lifecycleCallbacks: {  }

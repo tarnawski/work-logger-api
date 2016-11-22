@@ -1,0 +1,10 @@
+WorkLoggerBundle\Entity\Project:
+  project1:
+    name: <word()>
+    description: <sentence()>
+  project2:
+    name: <word()>
+    description: <sentence()>
+  project3:
+    name: <word()>
+    description: <sentence()>

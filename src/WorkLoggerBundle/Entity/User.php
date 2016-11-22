@@ -4,6 +4,7 @@ namespace WorkLoggerBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class User extends BaseUser
 {
@@ -22,9 +23,19 @@ class User extends BaseUser
     /** @var string */
     private $lastName;
 
+    /** @var string */
+    private $phone;
+
+    /** @var string */
+    private $department;
+
+    /** @var  ArrayCollection|Record[] */
+    private $records;
+
     public function __construct()
     {
         parent::__construct();
+        $this->records = new ArrayCollection();
     }
 
     /**
@@ -57,5 +68,66 @@ class User extends BaseUser
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * @param string $department
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRecords()
+    {
+        return $this->records;
+    }
+
+    /**
+     * @param Record
+     * @return Record
+     */
+    public function addRecord(Record $record)
+    {
+        if (!$this->records->contains($record)) {
+            $record->setUser($this);
+            $this->records[] = $record;
+        }
+        return $this;
+    }
+
+    /**
+     * @param Record
+     */
+    public function removeRecord(Record $record)
+    {
+        $this->records->removeElement($record);
     }
 }

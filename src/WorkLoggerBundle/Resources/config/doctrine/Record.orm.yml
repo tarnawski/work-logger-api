@@ -1,0 +1,41 @@
+WorkLoggerBundle\Entity\Record:
+    type: entity
+    table: record
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        time:
+            column: time
+            type: string
+            nullable: false
+            length: 32
+        date:
+            column: created_at
+            type: datetime
+            nullable: false
+        description:
+            column: description
+            type: string
+            nullable: false
+            length: 255
+    manyToOne:
+        project:
+          targetEntity: Project
+          inversedBy: record
+          joinColumn:
+            name: project_id
+            referencedColumnName: id
+        user:
+          targetEntity: User
+          inversedBy: record
+          joinColumn:
+            name: user_id
+            referencedColumnName: id
+    lifecycleCallbacks: {  }

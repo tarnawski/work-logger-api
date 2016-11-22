@@ -1,0 +1,17 @@
+WorkLoggerBundle\Entity\Project:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+      groups: [PROJECT_LIST, PROJECT_DETAILS]
+    name:
+      expose: true
+      groups: [PROJECT_LIST, PROJECT_DETAILS]
+    description:
+      expose: true
+      groups: [PROJECT_DETAILS]
+    records:
+      expose: true
+      groups: [PROJECT_DETAILS]
+      type: ArrayCollection<WorkLoggerBundle\Entity\Record>
+      max_depth: 2
