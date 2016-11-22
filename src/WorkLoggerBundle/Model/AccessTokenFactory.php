@@ -20,7 +20,7 @@ class AccessTokenFactory
 
     public function __construct(EntityManager $em, OAuth2 $auth2)
     {
-        $this->clientRepository = $em->getRepository('OAuthBundle:Client');
+        $this->clientRepository = $em->getRepository('WorkLoggerBundle:Client');
         $this->auth2 = $auth2;
     }
 

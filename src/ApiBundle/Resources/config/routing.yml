@@ -1,0 +1,21 @@
+########## STATUS ##########
+application_status:
+  path:     /status
+  defaults: { _controller: ApiBundle:Application:status, _format: json }
+  methods: [GET]
+
+########## USER ##########
+user_show:
+  path:     /profile
+  defaults: { _controller: ApiBundle:User:profile, _format: json }
+  methods: [GET]
+
+user_update:
+  path:     /profile
+  defaults: { _controller: ApiBundle:User:update, _format: json }
+  methods: [PUT]
+
+register:
+  path:     /register
+  defaults: { _controller: ApiBundle:User:register, _format: json }
+  methods: [POST]

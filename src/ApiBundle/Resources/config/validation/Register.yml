@@ -1,0 +1,20 @@
+ApiBundle\Model\Register:
+    properties:
+        username:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+        password:
+            - NotBlank: ~
+        client_id:
+            - NotBlank: ~
+        client_secret:
+            - NotBlank: ~
+    constraints:
+        - ApiBundle\Validator\Constraints\ClientId: ~
+        - ApiBundle\Validator\Constraints\UserUnique:
+            fields:
+                - name: username
+                  mapping: username
+                - name: email
+                  mapping: email

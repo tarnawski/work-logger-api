@@ -3,20 +3,9 @@
 namespace WorkLoggerBundle\Model;
 
 use WorkLoggerBundle\Entity\User;
-use Symfony\Component\PropertyAccess\PropertyAccess;
 
 class UserFactory
 {
-    public function build($username, $email, $userId, $fieldName)
-    {
-        $user = $this->createUser($username, $email);
-        $user->setPlainPassword(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
-        $accessor = PropertyAccess::createPropertyAccessor();
-        $accessor->setValue($user, $fieldName, $userId);
-
-        return $user;
-    }
-
     public function buildAfterRegistration($firstName, $lastName, $username, $email, $password)
     {
         $user = $this->createUser($firstName, $lastName, $username, $email);
@@ -26,6 +15,8 @@ class UserFactory
     }
 
     /**
+     * @param string $firstName
+     * @param string $lastName
      * @param string $username
      * @param string $email
      * @return User
@@ -39,7 +30,6 @@ class UserFactory
         $user->setEmail($email);
         $user->setRoles(['ROLE_API']);
         $user->setEnabled(true);
-        $user->setEmailNotification(true);
 
         return $user;
     }
