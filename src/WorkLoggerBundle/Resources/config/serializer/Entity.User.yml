@@ -1,0 +1,9 @@
+WorkLoggerBundle\Entity\User:
+  exclusion_policy: ALL
+  properties:
+    firstName:
+      expose: true
+      groups: [USER_DETAILS, USER_PROFILE, USER_BASIC]
+    lastName:
+      expose: true
+      groups: [USER_DETAILS, USER_PROFILE, USER_BASIC]

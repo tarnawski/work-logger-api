@@ -1,0 +1,18 @@
+WorkLoggerBundle\Entity\AuthCode:
+  type: entity
+  table: authcode
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+
+  manyToOne:
+    client:
+      targetEntity: WorkLoggerBundle\Entity\Client
+      joinColumn:
+        nullable: false
+    user:
+        targetEntity: WorkLoggerBundle\Entity\User
+
+  lifecycleCallbacks: {  }
